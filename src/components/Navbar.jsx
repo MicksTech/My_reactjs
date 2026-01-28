@@ -1,16 +1,17 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
     faHome,
     faInfoCircle,
     faCogs,
-    faEnvelope,
-    faCopyright,
     faMoon,
     faSun,
     faBars,
-    faXmark
+    faXmark,
+    faProjectDiagram,
+    faPhone
 } from '@fortawesome/free-solid-svg-icons'
+
 
 export default function Navbar() {
 
@@ -32,21 +33,41 @@ export default function Navbar() {
             <header className="flex justify-around items-center h-24 px-6">
 
                 {/* LOGO */}
-                <h1 className="text-xl font-bold">JMC</h1>
+                <h1 className="text-xl font-bold text-slate-700">JMC</h1>
 
                 {/* DESKTOP NAV */}
                 <nav className="hidden md:block">
-                    <ul className="flex space-x-4">
-                        <NavIcon icon={faHome} />
-                        <NavIcon icon={faInfoCircle} />
-                        <NavIcon icon={faCogs} />
-                        <NavIcon icon={faEnvelope} />
-                        <NavIcon icon={faCopyright} />
+                    <ul className="flex gap-8 text-slate-700">
+                        <li>
+                            <a href="" className='hover:bg-slate-400 p-2 rounded-full'>
+                                <FontAwesomeIcon icon={faHome} />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" className='hover:bg-slate-400 p-2 rounded-full'>
+                                <FontAwesomeIcon icon={faInfoCircle} />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" className='hover:bg-slate-400 p-2 rounded-full'>
+                                <FontAwesomeIcon icon={faCogs} />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" className='hover:bg-slate-400 p-2 rounded-full'>
+                                <FontAwesomeIcon icon={faProjectDiagram} />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" className='hover:bg-slate-400 p-2 rounded-full'>
+                                <FontAwesomeIcon icon={faPhone} />
+                            </a>
+                        </li>
                     </ul>
                 </nav>
 
                 {/* RIGHT BUTTONS */}
-                <div className="flex gap-4 text-xl">
+                <div className="flex gap-4 text-xl text-slate-700">
 
                     {/* DARK MODE */}
                     <button onClick={() => setDarkMode(!darkMode)}>
@@ -66,13 +87,33 @@ export default function Navbar() {
 
             {/* MOBILE NAV */}
             {showNav && (
-                <div className="md:hidden bg-white shadow-lg py-6">
-                    <ul className="flex flex-col items-center gap-6 text-xl">
-                        <NavIcon icon={faHome} />
-                        <NavIcon icon={faInfoCircle} />
-                        <NavIcon icon={faCogs} />
-                        <NavIcon icon={faEnvelope} />
-                        <NavIcon icon={faCopyright} />
+                <div className="md:hidden bg-slate-300 shadow-lg py-6">
+                    <ul className="flex flex-col items-center gap-6 text-xl text-slate-700 ">
+                        <li>
+                            <a href="" className='hover:bg-slate-400 p-2 rounded-full'>
+                                <FontAwesomeIcon icon={faHome} />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" className='hover:bg-slate-400 p-2 rounded-full'>
+                                <FontAwesomeIcon icon={faInfoCircle} />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" className='hover:bg-slate-400 p-2 rounded-full'>
+                                <FontAwesomeIcon icon={faCogs} />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" className='hover:bg-slate-400 p-2 rounded-full'>
+                                <FontAwesomeIcon icon={faProjectDiagram} />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" className='hover:bg-slate-400 p-2 rounded-full'>
+                                <FontAwesomeIcon icon={faPhone} />
+                            </a>
+                        </li>
                     </ul>
                 </div>
             )}

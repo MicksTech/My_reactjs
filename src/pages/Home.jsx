@@ -14,29 +14,33 @@ export default function Home() {
 
     useEffect(() => {
         const currentText = texts[textIndex]
-        let typingSpeed = isDeleting ? 60 : 120
+        const speed = isDeleting ? 60 : 120
 
         const timeout = setTimeout(() => {
+
             if (!isDeleting) {
                 // typing
-                setDisplayText(currentText.substring(0, displayText.length + 1))
+                setDisplayText(currentText.slice(0, displayText.length + 1))
 
-                if (displayText === currentText) {
+                if (displayText.length + 1 === currentText.length) {
                     setTimeout(() => setIsDeleting(true), 1000)
                 }
+
             } else {
                 // deleting
-                setDisplayText(currentText.substring(0, displayText.length - 1))
+                setDisplayText(currentText.slice(0, displayText.length - 1))
 
-                if (displayText === "") {
+                if (displayText.length === 1) {
                     setIsDeleting(false)
                     setTextIndex((prev) => (prev + 1) % texts.length)
                 }
             }
-        }, typingSpeed)
+
+        }, speed)
 
         return () => clearTimeout(timeout)
-    }, [displayText, isDeleting, textIndex])
+
+    }, [displayText, isDeleting, textIndex, texts])
 
     return (
         <div className="min-h-screen bg-slate-300 flex flex-col justify-center items-center w-full gap-8">
@@ -50,13 +54,17 @@ export default function Home() {
             <h3 className="font-bold text-5xl uppercase text-center text-slate-700">
                 John Michael Castor
             </h3>
-
+            <p className='w-1/3 text-center text-slate-700'>I am a fresh graduate of Lemery Colleges, where I earned a Bachelor of Science in 
+                Information Technology. I have a strong interest in software development and 
+                continuously strive to enhance my technical skills through hands-on projects 
+                and self-learning.
+            </p>
             <div className="flex gap-4">
                 <a
                     href="#"
                     className="bg-blue-500 px-4 py-2 text-white rounded
-          transition-transform duration-500 ease-in-out
-          hover:scale-110 hover:bg-blue-600"
+                    transition-transform duration-500 ease-in-out
+                    hover:scale-110 hover:bg-blue-600"
                 >
                     Follow me
                 </a>
@@ -64,8 +72,8 @@ export default function Home() {
                 <a
                     href="#"
                     className="bg-blue-500 px-4 py-2 text-white rounded
-          transition-transform duration-500 ease-in-out
-          hover:scale-110 hover:bg-blue-600"
+                    transition-transform duration-500 ease-in-out
+                    hover:scale-110 hover:bg-blue-600"
                 >
                     View CV
                 </a>
@@ -73,8 +81,8 @@ export default function Home() {
                 <a
                     href="#"
                     className="bg-blue-500 px-4 py-2 text-white rounded
-          transition-transform duration-500 ease-in-out
-          hover:scale-110 hover:bg-blue-600"
+                    transition-transform duration-500 ease-in-out
+                    hover:scale-110 hover:bg-blue-600"
                 >
                     Project
                 </a>
