@@ -5,7 +5,8 @@ export default function Home() {
     const texts = [
         "Graphic Designer",
         "Frontend Developer",
-        "Simple People"
+        "Simple People",
+        "UI/UX Developer"
     ]
 
     const [textIndex, setTextIndex] = useState(0)
@@ -43,20 +44,17 @@ export default function Home() {
     }, [displayText, isDeleting, textIndex, texts])
 
     return (
-        <div className="min-h-screen bg-slate-300 flex flex-col justify-center items-center w-full gap-8">
-
-            {/* TYPING EFFECT */}
-            <p className="text-xl -mt-40 text-slate-700 h-6">
+        <div className="min-h-screen flex flex-col justify-center items-center w-full gap-8" id='home' data-aos='zoom-in'>
+            <h3 className="font-bold text-5xl uppercase text-center">
+                John Michael Castor
+            </h3>
+            <p className="text-xl h-6">
                 {displayText}
                 <span className="animate-pulse">|</span>
             </p>
-
-            <h3 className="font-bold text-5xl uppercase text-center text-slate-700">
-                John Michael Castor
-            </h3>
-            <p className='w-1/3 text-center text-slate-700'>I am a fresh graduate of Lemery Colleges, where I earned a Bachelor of Science in 
-                Information Technology. I have a strong interest in software development and 
-                continuously strive to enhance my technical skills through hands-on projects 
+            <p className='w-1/3 text-center'>I am a fresh graduate of Lemery Colleges, where I earned a Bachelor of Science in
+                Information Technology. I have a strong interest in software development and
+                continuously strive to enhance my technical skills through hands-on projects
                 and self-learning.
             </p>
             <div className="flex gap-4">
@@ -67,24 +65,6 @@ export default function Home() {
                     hover:scale-110 hover:bg-blue-600"
                 >
                     Follow me
-                </a>
-
-                <a
-                    href="#"
-                    className="bg-blue-500 px-4 py-2 text-white rounded
-                    transition-transform duration-500 ease-in-out
-                    hover:scale-110 hover:bg-blue-600"
-                >
-                    View CV
-                </a>
-
-                <a
-                    href="#"
-                    className="bg-blue-500 px-4 py-2 text-white rounded
-                    transition-transform duration-500 ease-in-out
-                    hover:scale-110 hover:bg-blue-600"
-                >
-                    Project
                 </a>
             </div>
         </div>

@@ -9,7 +9,8 @@ import {
     faBars,
     faXmark,
     faProjectDiagram,
-    faPhone
+    faUser,
+    faCode
 } from '@fortawesome/free-solid-svg-icons'
 
 
@@ -28,46 +29,51 @@ export default function Navbar() {
     }, [darkMode])
 
     return (
-        <div className="w-full bg-slate-300 sticky top-0 z-10">
+        <div className="w-full sticky top-0 z-10 scroll-smooth" data-aos='zoom-in'>
 
             <header className="flex justify-around items-center h-24 px-6">
 
                 {/* LOGO */}
-                <h1 className="text-xl font-bold text-slate-700">JMC</h1>
+                <h1 className="text-xl font-bold">JMC</h1>
 
                 {/* DESKTOP NAV */}
                 <nav className="hidden md:block">
-                    <ul className="flex gap-8 text-slate-700">
+                    <ul className="flex gap-8">
                         <li>
-                            <a href="" className='hover:bg-slate-400 p-2 rounded-full'>
+                            <a href="#home" className='hover:bg-slate-400 p-2 rounded-full'>
                                 <FontAwesomeIcon icon={faHome} />
                             </a>
                         </li>
                         <li>
-                            <a href="" className='hover:bg-slate-400 p-2 rounded-full'>
+                            <a href="#about" className='hover:bg-slate-400 p-2 rounded-full'>
                                 <FontAwesomeIcon icon={faInfoCircle} />
                             </a>
                         </li>
                         <li>
-                            <a href="" className='hover:bg-slate-400 p-2 rounded-full'>
+                            <a href="#service" className='hover:bg-slate-400 p-2 rounded-full'>
                                 <FontAwesomeIcon icon={faCogs} />
                             </a>
                         </li>
                         <li>
-                            <a href="" className='hover:bg-slate-400 p-2 rounded-full'>
+                            <a href="#project" className='hover:bg-slate-400 p-2 rounded-full'>
                                 <FontAwesomeIcon icon={faProjectDiagram} />
                             </a>
                         </li>
                         <li>
-                            <a href="" className='hover:bg-slate-400 p-2 rounded-full'>
-                                <FontAwesomeIcon icon={faPhone} />
+                            <a href="#skills" className='hover:bg-slate-400 p-2 rounded-full'>
+                                <FontAwesomeIcon icon={faCode} />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#footer" className='hover:bg-slate-400 p-2 rounded-full'>
+                                <FontAwesomeIcon icon={faUser} />
                             </a>
                         </li>
                     </ul>
                 </nav>
 
                 {/* RIGHT BUTTONS */}
-                <div className="flex gap-4 text-xl text-slate-700">
+                <div className="flex gap-4 text-xl">
 
                     {/* DARK MODE */}
                     <button onClick={() => setDarkMode(!darkMode)}>
@@ -87,31 +93,36 @@ export default function Navbar() {
 
             {/* MOBILE NAV */}
             {showNav && (
-                <div className="md:hidden bg-slate-300 shadow-lg py-6">
+                <div className="md:hidden py-6">
                     <ul className="flex flex-col items-center gap-6 text-xl text-slate-700 ">
                         <li>
-                            <a href="" className='hover:bg-slate-400 p-2 rounded-full'>
+                            <a href="#home" className='hover:bg-slate-400 p-2 rounded-full'>
                                 <FontAwesomeIcon icon={faHome} />
                             </a>
                         </li>
                         <li>
-                            <a href="" className='hover:bg-slate-400 p-2 rounded-full'>
+                            <a href="#about" className='hover:bg-slate-400 p-2 rounded-full'>
                                 <FontAwesomeIcon icon={faInfoCircle} />
                             </a>
                         </li>
                         <li>
-                            <a href="" className='hover:bg-slate-400 p-2 rounded-full'>
+                            <a href="#service" className='hover:bg-slate-400 p-2 rounded-full'>
                                 <FontAwesomeIcon icon={faCogs} />
                             </a>
                         </li>
                         <li>
-                            <a href="" className='hover:bg-slate-400 p-2 rounded-full'>
+                            <a href="#project" className='hover:bg-slate-400 p-2 rounded-full'>
                                 <FontAwesomeIcon icon={faProjectDiagram} />
                             </a>
                         </li>
                         <li>
-                            <a href="" className='hover:bg-slate-400 p-2 rounded-full'>
-                                <FontAwesomeIcon icon={faPhone} />
+                            <a href="#skills" className='hover:bg-slate-400 p-2 rounded-full'>
+                                <FontAwesomeIcon icon={faCode} />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#footer" className='hover:bg-slate-400 p-2 rounded-full'>
+                                <FontAwesomeIcon icon={faUser} />
                             </a>
                         </li>
                     </ul>

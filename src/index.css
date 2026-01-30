@@ -1,1 +1,18 @@
 @import "tailwindcss";
+:root {
+    --primary-color: #ffffff;
+    --primary-color-text: #576A8F;
+}
+html,
+body {
+    scroll-behavior: smooth;
+    background: var(--primary-color);
+    color: var(--primary-color-text);
+}
+
+body.dark-theme {
+    background: var(--primary-color-text);
+    color: var(--primary-color);
+}
+
+/* index.css */
