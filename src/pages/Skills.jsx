@@ -5,7 +5,7 @@ export default function Skills() {
       <section className='w-full min-h-screen flex flex-col items-center justify-center' id='skills' data-aos='zoom-in'>
           <h2 className='font-bold uppercase text-3xl'>Skills</h2>
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mt-8'>
-              <div className='w-64 h-FULL border rounded p-4'>
+              <div className='w-64 h-full shadow-md rounded p-4'>
                   <h2 className='font-bold uppercase text-center'>FrontEnd / Frameworks</h2>
                   <p className='text-justify mt-2 text-sm'>
                       I specialize in building modern, responsive, and user-friendly interfaces using
@@ -23,7 +23,7 @@ export default function Skills() {
                       <span className='text-xs border p-1 text-center rounded-md'>REACT</span>
                   </div>
               </div>
-              <div className='w-64 h-full border rounded p-4'>
+              <div className='w-64 h-full shadow-md rounded p-4'>
                   <h2 className='font-bold uppercase text-center'>BackEnd / Frameworks</h2>
                   <p className='text-sm text-justify mt-2'>
                       I create robust and scalable backend systems using modern frameworks, focusing
@@ -37,7 +37,7 @@ export default function Skills() {
                       <span className='text-xs border p-1 text-center rounded-md'>MOONGODB</span>
                   </div>
               </div>
-              <div className='w-64 h-full border rounded p-4 '>
+              <div className='w-64 h-full shadow-md rounded p-4 '>
                   <h2 className='text-center font-bold uppercase'>Other</h2>
                   <p className='text-sm text-justify mt-2'>
                       I am proficient in using a variety of design and development tools to streamline

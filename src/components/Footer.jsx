@@ -27,7 +27,7 @@ export default function Footer() {
                         <li><FontAwesomeIcon icon={faUser} /></li>
                     </ul>
 
-                    <a href="#" className='px-4 py-2 border rounded hover:bg-gray-200 transition'>Follow me</a>
+                    <a href="#" className='px-4 py-2 rounded bg-blue-500 text-white transition'>Follow me</a>
                 </div>
 
                 {/* Location Section */}
@@ -55,7 +55,7 @@ export default function Footer() {
                         <a href="#" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faYoutube} /></a>
                         <a href="#" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faGithub} /></a>
                     </ul>
-                    <span className='text-gray-500 flex items-center gap-1 mt-4'>
+                    <span className='flex items-center gap-1 mt-4'>
                         <FontAwesomeIcon icon={faCopyright} /> {currentYear}
                     </span>
                 </div>

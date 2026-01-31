@@ -2,6 +2,7 @@ import React from 'react'
 import SofaStore from '../assets/image/SofaStore.png'
 import Votesystem from '../assets/image/Votesystem.png'
 import Alumni from '../assets/image/Alumni.png'
+import Reactpj from '../assets/image/Reactpj.png'
 
 export default function Project() {
     return (
@@ -23,7 +24,7 @@ export default function Project() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-12">
 
                     {/* Sofa Store */}
-                    <div className="border rounded overflow-hidden">
+                    <div className="shadow-md rounded overflow-hidden">
                         <img
                             src={SofaStore}
                             alt="Sofa Store Website"
@@ -49,7 +50,7 @@ export default function Project() {
                     </div>
 
                     {/* Alumni */}
-                    <div className="border rounded overflow-hidden">
+                    <div className="shadow-md rounded overflow-hidden">
                         <img
                             src={Alumni}
                             alt="Alumni System"
@@ -75,7 +76,7 @@ export default function Project() {
                     </div>
 
                     {/* Voting */}
-                    <div className="border rounded overflow-hidden">
+                    <div className="shadow-md rounded overflow-hidden">
                         <img
                             src={Votesystem}
                             alt="Voting System"
@@ -96,6 +97,30 @@ export default function Project() {
                                 <span className="px-3 py-1 text-xs rounded-full">HTML</span>
                                 <span className="px-3 py-1 text-xs rounded-full">CSS</span>
                                 <span className="px-3 py-1 text-xs rounded-full">JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="shadow-md rounded overflow-hidden">
+                        <img
+                            src={Reactpj}
+                            alt="Sofa Store Website"
+                            className="w-full h-52 object-cover p-2"
+                        />
+
+                        <div className="p-6">
+                            <h3 className="font-semibold text-lg mb-2">
+                                Portfolio website
+                            </h3>
+
+                            <p className="text-sm leading-relaxed">
+                                A responsive project use React and the style 
+                                use Tailwindcss to enchance UI/UX
+                            </p>
+
+                            <div className="flex flex-wrap gap-2 mt-4">
+                                <span className="px-3 py-1 text-xs rounded-full">ReactJS</span>
+                                <span className="px-3 py-1 text-xs rounded-full">Tailwind</span>
                             </div>
                         </div>
                     </div>

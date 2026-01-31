@@ -12,7 +12,7 @@ import {
     faUser,
     faCode
 } from '@fortawesome/free-solid-svg-icons'
-
+import Logo from '../assets/image/Logo.png'
 
 export default function Navbar() {
 
@@ -29,12 +29,14 @@ export default function Navbar() {
     }, [darkMode])
 
     return (
-        <div className="w-full sticky top-0 z-10 scroll-smooth" data-aos='zoom-in'>
+        <div className="w-full sticky top-0 z-10 scroll-smooth shadow-sm" data-aos='zoom-in'>
 
             <header className="flex justify-around items-center h-24 px-6">
 
                 {/* LOGO */}
-                <h1 className="text-xl font-bold">JMC</h1>
+                <a href="">
+                    <img src={Logo} alt="" className='w-40 h-32'/>
+               </a>
 
                 {/* DESKTOP NAV */}
                 <nav className="hidden md:block">
