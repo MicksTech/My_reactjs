@@ -59,7 +59,7 @@ export default function Home() {
             </p>
             <div className="flex gap-4">
                 <a
-                    href="#"
+                    href="#footer"
                     className="bg-blue-500 px-4 py-2 text-white rounded
                     transition-transform duration-500 ease-in-out
                     hover:scale-110 hover:bg-blue-600"

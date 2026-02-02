@@ -15,7 +15,7 @@ export default function About() {
                 <img
                     src={GradPic}
                     alt="About"
-                    className="w-1/4 h-9/10 hidden md:block drop-shadow-xl"
+                    className="w-1/4 h-9/10 hidden md:block drop-shadow-xl transition-transform duration-500 ease-in-out hover:scale-110"
                 />
 
                 {/* CONTENT */}
@@ -36,7 +36,7 @@ export default function About() {
                         </a>
 
                         <a
-                            href="#projects"
+                            href="#project"
                             className="px-5 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 hover:scale-105 transition duration-300"
                         >
                             View Projects

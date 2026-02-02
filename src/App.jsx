@@ -14,7 +14,7 @@ function App() {
     AOS.init({ duration: 1000 });
 
   return (
-    <div className="min-h-screen w-full dark:primary-color dark:primary-color-text transition-colors duration-300">
+    <div className="min-h-screen w-full">
       <Navbar />
       <Home />
       <About />

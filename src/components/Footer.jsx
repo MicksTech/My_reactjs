@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import {
+    faArrowUp,
     faCode, faCogs, faCopyright, faEnvelope, faHome, faInfoCircle, faLocation, faPhone, faProjectDiagram, faUser
 } from '@fortawesome/free-solid-svg-icons'
 import { faFacebook, faGithub, faYoutube } from '@fortawesome/free-brands-svg-icons'
@@ -9,7 +10,7 @@ export default function Footer() {
     const currentYear = new Date().getFullYear(); // React way to get current year
 
     return (
-        <section className='flex flex-col items-center justify-center w-full min-h-screen p-6 '>
+        <section className='flex flex-col items-center justify-center w-full min-h-screen p-6 ' id='footer'>
             <h2 className='font-bold text-3xl uppercase'>Let's connect</h2>
             <div className='flex flex-col md:flex-row justify-evenly items-center w-full mt-8 gap-12'>
 
@@ -27,7 +28,7 @@ export default function Footer() {
                         <li><FontAwesomeIcon icon={faUser} /></li>
                     </ul>
 
-                    <a href="#" className='px-4 py-2 rounded bg-blue-500 text-white transition'>Follow me</a>
+                    <a href="#" className='px-4 py-2 rounded bg-blue-500 text-white transition-transform duration-500 ease-in-out hover:scale-110'>Follow me</a>
                 </div>
 
                 {/* Location Section */}
@@ -48,15 +49,20 @@ export default function Footer() {
                 </div>
 
                 {/* Media Links Section */}
-                <div className='flex flex-col gap-4'>
+                <div className='flex flex-col gap-2'>
                     <h3 className='font-bold text-2xl uppercase'>Media Links</h3>
                     <ul className='flex gap-4'>
                         <a href="#" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faFacebook} /></a>
                         <a href="#" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faYoutube} /></a>
                         <a href="#" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faGithub} /></a>
                     </ul>
-                    <span className='flex items-center gap-1 mt-4'>
+                    <div className='flex gap-2'>
+                        <input className='border' type="text" name='name' id='name' required />
+                        <button className='bg-blue-600 py-2 px-4 text-white hover:bg-blue-500 transition-transform duration-500 ease-in-out hover:scale-110'>Send</button>
+                    </div>
+                    <span className='flex items-center gap-1 mt-2'>
                         <FontAwesomeIcon icon={faCopyright} /> {currentYear}
+                        <a href="#home" className='px-1 py-2 bg-slate-500 text-white animate-bounce'><FontAwesomeIcon icon={faArrowUp}/></a>
                     </span>
                 </div>
 

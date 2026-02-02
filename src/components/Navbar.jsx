@@ -19,17 +19,27 @@ export default function Navbar() {
     const [darkMode, setDarkMode] = useState(false)
     const [showNav, setShowNav] = useState(false)
 
-    // DARK MODE
+    useEffect(() => {
+        const savedTheme = localStorage.getItem('dark-theme')
+        if (savedTheme === 'enabled') {
+            setDarkMode(true)
+            document.body.classList.add('dark-theme')
+        }
+    }, [])
+
     useEffect(() => {
         if (darkMode) {
             document.body.classList.add('dark-theme')
+            localStorage.setItem('dark-theme', 'enabled')
         } else {
             document.body.classList.remove('dark-theme')
+            localStorage.setItem('dark-theme', 'disabled')
         }
     }, [darkMode])
 
+
     return (
-        <div className="w-full sticky top-0 z-10 scroll-smooth shadow-sm" data-aos='zoom-in'>
+        <div className="w-full sticky top-0 z-10 scroll-smooth shadow-sm">
 
             <header className="flex justify-around items-center h-24 px-6">
 
