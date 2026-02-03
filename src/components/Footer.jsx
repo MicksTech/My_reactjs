@@ -16,7 +16,7 @@ export default function Footer() {
                     </span>
                 </h3>
 
-                <div className='flex gap-4 my-4'>
+                <div className='grid grid-cols-1 md:grid-cols-1 lg:grid-cols-5  gap-4 my-4'>
                     <a href="https://www.facebook.com/johnmichael.b.castor.58" target='_blank' className='px-4 py-2 gap-2 flex bg-slate-500 hover:bg-slate-600 text-white rounded'>
                         Facebook
                         <FontAwesomeIcon icon={faFacebook} />
