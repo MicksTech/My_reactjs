@@ -2,6 +2,7 @@ import { faEye } from '@fortawesome/free-regular-svg-icons'
 import { faPhone } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useEffect, useState } from 'react'
+import PCV from '../assets/image/PCV.png'
 
 export default function Home() {
     const texts = ['Graphic Designer', 'Web Designer', 'FrontEnd Developer', 'UI/UX Designer']
@@ -68,14 +69,14 @@ export default function Home() {
                 {/* Buttons */}
                 <div className="flex gap-4 mt-4">
                     <a
-                        href="#contact"
+                        href="#footer"
                         className="bg-slate-500 px-4 py-2 gap-2 flex rounded text-white hover:bg-slate-700 transition"
                     >
                         Contact me <FontAwesomeIcon icon={faPhone} />
                     </a>
 
                     <a
-                        href="/path-to-cv.pdf"
+                        href={PCV}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="bg-slate-200 px-4 py-2 gap-2 flex hover:bg-slate-400 rounded text-slate-700 transition"

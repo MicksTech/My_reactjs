@@ -6,6 +6,7 @@ import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import About from './pages/About'
 import Footer from './components/Footer'
+import Service from './pages/Service'
 
 function App() {
   const [isDark, setDark] = useState(() => {
@@ -34,6 +35,7 @@ function App() {
         <Navbar isDark={isDark} setDark={setDark} />
         <Home />
         <About />
+        <Service />
         <Footer />
       </div>
     </div>
