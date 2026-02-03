@@ -1,5 +1,4 @@
 @import "tailwindcss";
-
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
@@ -10,4 +9,6 @@ html,
 body {
     scroll-behavior: smooth; 
 }
+
+
 /* index.css */
