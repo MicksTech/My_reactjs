@@ -14,7 +14,7 @@ export default function Navbar({ isDark, setDark }) {
     const [isOpen, setOpen] = useState(false)
 
     return (
-        <header className="flex h-16 px-6 items-center justify-around w-full shadow-md sticky top-0 z-10 bg-white dark:bg-gray-900 transition-all">
+        <header className="flex h-16 px-6 items-center justify-around w-full shadow-md sticky top-0 z-12 bg-white dark:bg-gray-900 transition-all">
 
             {/* Logo */}
             <a href="#home">
