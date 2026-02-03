@@ -7,6 +7,8 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Footer from './components/Footer'
 import Service from './pages/Service'
+import Project from './pages/Project'
+import Skills from './pages/Skills'
 
 function App() {
   const [isDark, setDark] = useState(() => {
@@ -36,6 +38,8 @@ function App() {
         <Home />
         <About />
         <Service />
+        <Project />
+        <Skills />
         <Footer />
       </div>
     </div>

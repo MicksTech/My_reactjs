@@ -8,7 +8,7 @@ import {
     faMoon,
     faUser
 } from '@fortawesome/free-regular-svg-icons'
-import { faBars, faCogs, faXmark } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faCode, faCogs, faDiagramProject, faXmark } from '@fortawesome/free-solid-svg-icons'
 
 export default function Navbar({ isDark, setDark }) {
     const [isOpen, setOpen] = useState(false)
@@ -36,6 +36,16 @@ export default function Navbar({ isDark, setDark }) {
                 <li>
                     <a href="#service" className="text-gray-800 dark:text-white">
                         <FontAwesomeIcon icon={faCogs} />
+                    </a>
+                </li>
+                <li>
+                    <a href="#project" className="text-gray-800 dark:text-white">
+                        <FontAwesomeIcon icon={faDiagramProject} />
+                    </a>
+                </li>
+                <li>
+                    <a href="#skills" className="text-gray-800 dark:text-white">
+                        <FontAwesomeIcon icon={faCode} />
                     </a>
                 </li>
                 <li>

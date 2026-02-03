@@ -34,7 +34,7 @@ export default function Footer() {
                         <FontAwesomeIcon icon={faGithub} />
                     </a>
                     
-                    <a href="" className='px-4 py-2 bg-slate-500 hover:bg-slate-600 text-white rounded'>
+                    <a href="" className='px-4 py-2 gap-2 flex bg-slate-500 hover:bg-slate-600 text-white rounded'>
                         Send Email
                         <FontAwesomeIcon icon={faAirbnb} />
                     </a>
