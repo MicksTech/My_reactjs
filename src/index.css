@@ -1,18 +1,14 @@
 @import "tailwindcss";
-:root {
-    --primary-color: #ffffff;
-    --primary-color-text: #576A8F;
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --primary-color: #3b82f6;
+    --primary-color-text: #0d0d0d;
 }
 html,
 body {
-    scroll-behavior: smooth;
-    background: var(--primary-color);
-    color: var(--primary-color-text); 
-}
-
-body.dark-theme {
-    background: var(--primary-color-text);
-    color: var(--primary-color);
+    scroll-behavior: smooth; 
 }
 
 /* index.css */

@@ -1,72 +1,50 @@
+import { faAirbnb, faFacebook, faGithub, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons'
+import { faCopyright } from '@fortawesome/free-regular-svg-icons'
+import { faSignal } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
-import {
-    faArrowUp,
-    faCode, faCogs, faCopyright, faEnvelope, faHome, faInfoCircle, faLocation, faPhone, faProjectDiagram, faUser
-} from '@fortawesome/free-solid-svg-icons'
-import { faFacebook, faGithub, faYoutube } from '@fortawesome/free-brands-svg-icons'
 
 export default function Footer() {
-    const currentYear = new Date().getFullYear(); // React way to get current year
-
+    
+    const currentDate = new Date().getFullYear();
     return (
-        <section className='flex flex-col items-center justify-center w-full min-h-screen p-6 ' id='footer'>
-            <h2 className='font-bold text-3xl uppercase'>Let's connect</h2>
-            <div className='flex flex-col md:flex-row justify-evenly items-center w-full mt-8 gap-12'>
-
-                {/* Info / Name Section */}
-                <div className='flex flex-col gap-4'>
-                    <a href="#home" className='font-bold text-2xl'>JMC</a>
-                    <h4 className='text-md'>JOHN MICHAEL CASTOR</h4>
-
-                    <ul className='flex gap-4'>
-                        <li><FontAwesomeIcon icon={faHome} /></li>
-                        <li><FontAwesomeIcon icon={faInfoCircle} /></li>
-                        <li><FontAwesomeIcon icon={faCogs} /></li>
-                        <li><FontAwesomeIcon icon={faProjectDiagram} /></li>
-                        <li><FontAwesomeIcon icon={faCode} /></li>
-                        <li><FontAwesomeIcon icon={faUser} /></li>
-                    </ul>
-
-                    <a href="#" className='px-4 py-2 rounded bg-blue-500 text-white transition-transform duration-500 ease-in-out hover:scale-110'>Follow me</a>
-                </div>
-
-                {/* Location Section */}
-                <div className='flex flex-col gap-4'>
-                    <h3 className='font-bold text-2xl uppercase'>Location</h3>
-                    <a href="#" className='flex items-center gap-2'>
-                        <FontAwesomeIcon icon={faLocation} />
-                        <span>Sitio, Laylayan ng Boboy San Luis Batangas, 4210</span>
-                    </a>
-                    <a href="mailto:johnmichaelbcastor@gmail.com" className='flex items-center gap-2'>
-                        <FontAwesomeIcon icon={faEnvelope} />
-                        <span>johnmichaelbcastor@gmail.com</span>
-                    </a>
-                    <a href="tel:+639187766241" className='flex items-center gap-2'>
-                        <FontAwesomeIcon icon={faPhone} />
-                        <span>+63 918 7766 241</span>
-                    </a>
-                </div>
-
-                {/* Media Links Section */}
-                <div className='flex flex-col gap-2'>
-                    <h3 className='font-bold text-2xl uppercase'>Media Links</h3>
-                    <ul className='flex gap-4'>
-                        <a href="#" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faFacebook} /></a>
-                        <a href="#" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faYoutube} /></a>
-                        <a href="#" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faGithub} /></a>
-                    </ul>
-                    <div className='flex gap-2'>
-                        <input className='border' type="text" name='name' id='name' required />
-                        <button className='bg-blue-600 py-2 px-4 text-white hover:bg-blue-500 transition-transform duration-500 ease-in-out hover:scale-110'>Send</button>
-                    </div>
-                    <span className='flex items-center gap-1 mt-2'>
-                        <FontAwesomeIcon icon={faCopyright} /> {currentYear}
-                        <a href="#home" className='px-1 py-2 bg-slate-500 text-white animate-bounce'><FontAwesomeIcon icon={faArrowUp}/></a>
+        <section>
+            <main id='footer' className='flex flex-col items-center w-full h-full'>
+                <h3 className='text-2xl uppercase text-slate-800 dark:text-white'>Let's Connect
+                    <span>
+                        <FontAwesomeIcon icon={faSignal} className='text-md' />
                     </span>
-                </div>
+                </h3>
 
-            </div>
+                <div className='flex gap-4 my-4'>
+                    <a href="https://www.facebook.com/johnmichael.b.castor.58" target='_blank' className='px-4 py-2 gap-2 flex bg-slate-500 hover:bg-slate-600 text-white rounded'>
+                        Facebook
+                        <FontAwesomeIcon icon={faFacebook} />
+                    </a>
+                    <a href="https://www.youtube.com/@m-castorjohnmichaelbalasbs3039" target='_blank' className='px-4 py-2 gap-2 flex bg-slate-300 hover:bg-slate-400 rounded text-slate-700'>
+                        Youtube
+                        <FontAwesomeIcon icon={faYoutube} />
+                    </a>
+                    <a href="https://www.instagram.com/mickstech7/" target='_blank' className='px-4 py-2 gap-2 flex bg-slate-300 hover:bg-slate-400 rounded text-slate-700'>
+                        Instagram
+                        <FontAwesomeIcon icon={faInstagram} />
+                    </a>
+                    <a href="https://github.com/MicksTech" target='_blank' className='px-4 py-2 gap-2 flex bg-slate-300 hover:bg-slate-400 rounded text-slate-700'>
+                        Github
+                        <FontAwesomeIcon icon={faGithub} />
+                    </a>
+                    
+                    <a href="" className='px-4 py-2 bg-slate-500 hover:bg-slate-600 text-white rounded'>
+                        Send Email
+                        <FontAwesomeIcon icon={faAirbnb} />
+                    </a>
+                </div>
+                
+                <span className='my-4 text-slate-800 dark:text-white'>
+                    <FontAwesomeIcon icon={faCopyright} />
+                    {currentDate} Michael. All rights reserved
+                </span>
+            </main>
         </section>
     )
 }

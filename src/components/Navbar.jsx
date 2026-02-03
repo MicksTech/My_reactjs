@@ -1,139 +1,81 @@
-import { useState, useEffect } from 'react'
+import React, { useState } from 'react'
+import Logo from '../assets/image/Logo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
     faHome,
-    faInfoCircle,
-    faCogs,
-    faMoon,
+    faCircleQuestion,
     faSun,
-    faBars,
-    faXmark,
-    faProjectDiagram,
-    faUser,
-    faCode
-} from '@fortawesome/free-solid-svg-icons'
-import Logo from '../assets/image/Logo.png'
+    faMoon,
+    faUser
+} from '@fortawesome/free-regular-svg-icons'
+import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons'
 
-export default function Navbar() {
-
-    const [darkMode, setDarkMode] = useState(false)
-    const [showNav, setShowNav] = useState(false)
-
-    useEffect(() => {
-        const savedTheme = localStorage.getItem('dark-theme')
-        if (savedTheme === 'enabled') {
-            setDarkMode(true)
-            document.body.classList.add('dark-theme')
-        }
-    }, [])
-
-    useEffect(() => {
-        if (darkMode) {
-            document.body.classList.add('dark-theme')
-            localStorage.setItem('dark-theme', 'enabled')
-        } else {
-            document.body.classList.remove('dark-theme')
-            localStorage.setItem('dark-theme', 'disabled')
-        }
-    }, [darkMode])
-
+export default function Navbar({ isDark, setDark }) {
+    const [isOpen, setOpen] = useState(false)
 
     return (
-        <div className="w-full sticky top-0 z-10 scroll-smooth shadow-sm">
+        <header className="flex h-16 px-6 items-center justify-around w-full shadow-md sticky top-0 z-10 bg-white dark:bg-gray-900 transition-all">
 
-            <header className="flex justify-around items-center h-24 px-6">
+            {/* Logo */}
+            <a href="#home">
+                <img src={Logo} alt="Logo" className="w-32" />
+            </a>
 
-                {/* LOGO */}
-                <a href="">
-                    <img src={Logo} alt="" className='w-40 h-32'/>
-               </a>
+            {/* Desktop Menu */}
+            <ul className="hidden md:flex space-x-6 items-center">
+                <li>
+                    <a href="#home" className="text-gray-800 dark:text-white">
+                        <FontAwesomeIcon icon={faHome} />
+                    </a>
+                </li>
+                <li>
+                    <a href="#about" className="text-gray-800 dark:text-white">
+                        <FontAwesomeIcon icon={faCircleQuestion} />
+                    </a>
+                </li>
+                <li>
+                    <a href="#footer" className="text-gray-800 dark:text-white">
+                        <FontAwesomeIcon icon={faUser} />
+                    </a>
+                </li>
+            </ul>
 
-                {/* DESKTOP NAV */}
-                <nav className="hidden md:block">
-                    <ul className="flex gap-8">
+            {/* Right controls */}
+            <div className="flex items-center space-x-4">
+
+                {/* Dark mode */}
+                <button
+                    onClick={() => setDark(prev => !prev)}
+                    className="text-gray-800 dark:text-white cursor-pointer"
+                >
+                    <FontAwesomeIcon icon={isDark ? faSun : faMoon} />
+                </button>
+
+                {/* Mobile Menu Button */}
+                <button
+                    onClick={() => setOpen(prev => !prev)}
+                    className="md:hidden text-gray-800 dark:text-white cursor-pointer"
+                >
+                    <FontAwesomeIcon icon={isOpen ? faXmark : faBars} />
+                </button>
+            </div>
+
+            {/* Mobile Menu */}
+            {isOpen && (
+                <div className="absolute top-16 left-0 w-full shadow-md bg-white dark:bg-gray-900 md:hidden">
+                    <ul className="flex flex-col items-center space-y-4 py-6">
                         <li>
-                            <a href="#home" className='hover:bg-slate-400 p-2 rounded-full'>
+                            <a href="#home" onClick={() => setOpen(false)} className="text-gray-800 dark:text-white">
                                 <FontAwesomeIcon icon={faHome} />
                             </a>
                         </li>
                         <li>
-                            <a href="#about" className='hover:bg-slate-400 p-2 rounded-full'>
-                                <FontAwesomeIcon icon={faInfoCircle} />
+                            <a href="#about" onClick={() => setOpen(false)} className="text-gray-800 dark:text-white">
+                                <FontAwesomeIcon icon={faCircleQuestion} />
                             </a>
                         </li>
                         <li>
-                            <a href="#service" className='hover:bg-slate-400 p-2 rounded-full'>
-                                <FontAwesomeIcon icon={faCogs} />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#project" className='hover:bg-slate-400 p-2 rounded-full'>
-                                <FontAwesomeIcon icon={faProjectDiagram} />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#skills" className='hover:bg-slate-400 p-2 rounded-full'>
-                                <FontAwesomeIcon icon={faCode} />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#footer" className='hover:bg-slate-400 p-2 rounded-full'>
-                                <FontAwesomeIcon icon={faUser} />
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-
-                {/* RIGHT BUTTONS */}
-                <div className="flex gap-4 text-xl">
-
-                    {/* DARK MODE */}
-                    <button onClick={() => setDarkMode(!darkMode)}>
-                        <FontAwesomeIcon icon={darkMode ? faSun : faMoon} />
-                    </button>
-
-                    {/* HAMBURGER */}
-                    <button
-                        className="md:hidden"
-                        onClick={() => setShowNav(!showNav)}
-                    >
-                        <FontAwesomeIcon icon={showNav ? faXmark : faBars} />
-                    </button>
-
-                </div>
-            </header>
-
-            {/* MOBILE NAV */}
-            {showNav && (
-                <div className="md:hidden py-6">
-                    <ul className="flex flex-col items-center gap-6 text-xl text-slate-700 ">
-                        <li>
-                            <a href="#home" className='hover:bg-slate-400 p-2 rounded-full'>
-                                <FontAwesomeIcon icon={faHome} />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#about" className='hover:bg-slate-400 p-2 rounded-full'>
-                                <FontAwesomeIcon icon={faInfoCircle} />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#service" className='hover:bg-slate-400 p-2 rounded-full'>
-                                <FontAwesomeIcon icon={faCogs} />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#project" className='hover:bg-slate-400 p-2 rounded-full'>
-                                <FontAwesomeIcon icon={faProjectDiagram} />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#skills" className='hover:bg-slate-400 p-2 rounded-full'>
-                                <FontAwesomeIcon icon={faCode} />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#footer" className='hover:bg-slate-400 p-2 rounded-full'>
+                            <a href="#footer" onClick={() => setOpen(false)} className="text-gray-800 dark:text-white">
                                 <FontAwesomeIcon icon={faUser} />
                             </a>
                         </li>
@@ -141,16 +83,6 @@ export default function Navbar() {
                 </div>
             )}
 
-        </div>
-    )
-}
-
-function NavIcon({ icon }) {
-    return (
-        <li>
-            <a className="hover:bg-slate-300 p-3 rounded-full transition">
-                <FontAwesomeIcon icon={icon} />
-            </a>
-        </li>
+        </header>
     )
 }
