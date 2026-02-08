@@ -48,7 +48,7 @@ export default function Home() {
             <main
                 id="home"
                 className="min-h-screen pb-48 w-full flex flex-col items-center justify-center 
-        bg-white dark:bg-gray-900 transition-all gap-4"
+        bg-white dark:bg-gray-900 transition-all "
             >
                 {/* Typing effect */}
                 <span className="text-gray-800 dark:text-white text-lg font-medium">

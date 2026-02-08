@@ -94,6 +94,16 @@ export default function Navbar({ isDark, setDark }) {
                                 <FontAwesomeIcon icon={faUser} />
                             </a>
                         </li>
+                        <li>
+                            <a href="#skills" onClick={() => setOpen(false)} className="text-gray-800 dark:text-white">
+                                <FontAwesomeIcon icon={faCode} />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#footer" onclick={() => setOpen(false)} className="text-gray-800 dark:text-white">
+                                <FontAwesomeIcon icon={faUser} />
+                            </a>
+                        </li>
                     </ul>
                 </div>
             )}
